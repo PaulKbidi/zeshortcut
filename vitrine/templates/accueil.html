@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+    </head>
+    <body>
+        <div class="entete">
+            <img src="{% static "images/Capture_decran_2024-02-20_130616.png" %}" />
+        </div>
+        {% comment %} ------------------------------------------- {% endcomment %}
+        <div class="question_1">
+            <h1>
+                Quel est votre genre?
+            </h1>
+            <div class="radio">
+                <div class="radio_1">
+                    <input type="radio" id="boy" name="genre" />
+                    <label for="boy">
+                        <img src="{% static "images/boy_svg.svg" %}" />
+                        <span>Homme</span>
+                    </label>
+                </div>
+                <div class="radio_2">
+                    <input type="radio" id="girl" name="genre" />
+                    <label for="girl">
+                        <img src="{% static "images/girl_svg.svg" %}" />
+                        <span>Femme</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="next">
+            <button>Next</button>
+        </div>
+
+        {% comment %} ------------------------------------------- {% endcomment %}
+        <div class="footer">
+            <img src="{% static "images/footer_svg.svg" %}" />
+        </div>
+    </body>
+</html>
