@@ -6,18 +6,15 @@
     box-sizing: border-box;
 }
 
-.entete {
+.body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-.question_1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
+.question {
+    text-align: center;
 }
 
 h1 {
@@ -60,7 +57,7 @@ h1 {
 }
 
 .radio_1 input:checked {
-  border: 6px solid #f39c12;
+    border: 6px solid #f39c12;
 }
 
 .radio_1 label {
@@ -95,7 +92,7 @@ h1 {
 }
 
 .radio_2 input:checked {
-  border: 6px solid #f39c12;
+    border: 6px solid #f39c12;
 }
 
 
@@ -106,11 +103,24 @@ h1 {
     flex-direction: column;
 }
 
+input[type=number] {
+    -webkit-appearance: textfield; /* Masque l'arrière-plan fléché dans certains navigateurs */
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  
+  /* Styles pour les boutons up et down dans le champ number */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Désactive les flèches dans Chrome et Safari */
+    margin: 0; /* Supprime la marge par défaut dans Firefox */
+  }
+
 .next {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem;
+    margin: 1rem;
 }
 
 .next button {
@@ -125,15 +135,8 @@ h1 {
     padding: 10px;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
 .footer img {
+    position: absolute;
     width: 100%;
+    z-index: -1;
 }

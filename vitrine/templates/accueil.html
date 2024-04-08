@@ -10,34 +10,19 @@
         <link rel="stylesheet" href="{% static "css/style.css" %}">
     </head>
     <body>
-        <div class="entete">
-            <img src="{% static "images/Capture_decran_2024-02-20_130616.png" %}" />
-        </div>
-        {% comment %} ------------------------------------------- {% endcomment %}
-        <div class="question_1">
-            <h1>
-                Quel est votre genre?
-            </h1>
-            <div class="radio">
-                <div class="radio_1">
-                    <input type="radio" id="boy" name="genre" />
-                    <label for="boy">
-                        <img src="{% static "images/boy_svg.svg" %}" />
-                        <span>Homme</span>
-                    </label>
-                </div>
-                <div class="radio_2">
-                    <input type="radio" id="girl" name="genre" />
-                    <label for="girl">
-                        <img src="{% static "images/girl_svg.svg" %}" />
-                        <span>Femme</span>
-                    </label>
-                </div>
+        <div class="body">
+            <div class="entete">
+                <img src="{% static "images/Capture_decran_2024-02-20_130616.png" %}" />
             </div>
-        </div>
-
-        <div class="next">
-            <button>Next</button>
+        {% comment %} ------------------------------------------- {% endcomment %}
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit">
+        </form>
+            <div class="next">
+                <button>Next</button>
+            </div>
         </div>
 
         {% comment %} ------------------------------------------- {% endcomment %}
