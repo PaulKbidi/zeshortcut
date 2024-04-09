@@ -12,22 +12,95 @@
     <body>
         <div class="body">
             <div class="entete">
-                <img src="{% static "images/Capture_decran_2024-02-20_130616.png" %}" />
+                <a href="{% url 'accueil-url' %}"><img src="{% static "images/Capture_decran_2024-02-20_130616.png" %}" /></a>
             </div>
-        {% comment %} ------------------------------------------- {% endcomment %}
-        <form method="post">
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Submit">
-        </form>
+            {% comment %} ------------------------------------------- {% endcomment %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="question" style="display:block;">
+                    <label for="id_sex" class="sex">Quel est votre genre ?</label>
+                    <div id="id_sex" class="radio">
+                        <div>
+                            <label for="id_sex_0" class="radio0">
+                                <input type="radio" name="sex" value="0" required id="id_sex_0">
+                                <span>Homme</span>
+                                <img src="{% static 'images/boy_svg.svg' %}" />
+                            </label>
+                        </div>
+                        <div>
+                            <label for="id_sex_1" class="radio1">
+                                <input type="radio" name="sex" value="1" required id="id_sex_1">
+                                <span>Femme</span>
+                                <img src="{% static 'images/girl_svg.svg' %}" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="div">
+                        <label for="id_age">Quel âge avez-vous ?</label>
+                        <div class="div0">
+                            <input type="number" name="age" placeholder="Âge" maxlength="32" required id="id_age">
+                            ans
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="div">
+                        <label for="id_weight" class="weight">Combien pesez-vous ?</label>
+                        <div class="div0">
+                            <input type="number" name="weight" placeholder="Poids" required id="id_weight">
+                            kg
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="div">
+                        <label for="id_size" class="size">Combien mesurez-vous ?</label>
+                        <div class="div0">
+                            <input type="number" name="size" placeholder="Taille" maxlength="100" required id="id_size">
+                            cm
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <input type="submit" value="Envoyer">
+                </div>
+            </form>
             <div class="next">
-                <button>Next</button>
+                <button>Suivant</button>
             </div>
         </div>
-
         {% comment %} ------------------------------------------- {% endcomment %}
         <div class="footer">
             <img src="{% static "images/footer_svg.svg" %}" />
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var questions = document.querySelectorAll('.question');
+                console.log(questions);
+            
+                var currentQuestion = 0;
+            
+                var nextButton = document.querySelector('.next button');
+            
+                nextButton.addEventListener('click', function() {
+                    questions[currentQuestion].style.display = 'none';
+            
+                    currentQuestion++;
+                    console.log(currentQuestion);
+            
+                    if (currentQuestion < questions.length) {
+                        questions[currentQuestion].style.display = 'block';
+                    } else {
+                        nextButton.style.display = 'none';
+                    }
+                    if(currentQuestion == questions.length - 1){
+                        nextButton.style.display = 'none';
+                    }
+                });
+            });
+            
+        </script>
     </body>
 </html>

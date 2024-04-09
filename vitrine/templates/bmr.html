@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+    </head>
+    <body>
+        <div class="body">
+            <div class="entete">
+                <a href="{% url 'accueil-url' %}"><img src="{% static "images/Capture_decran_2024-02-20_130616.png" %}" /></a>
+            </div>
+            <h1>Votre total calorique est de : {{api_bmr}}</h1>
+            <form method="post">
+                {% csrf_token %}
+                <p>
+                    <label>Typeplan :</label>
+                    <div id="id_typePlan">
+                        <div>
+                            <label for="id_typePlan_0">
+                                <input type="radio" name="typePlan" value="0" required id="id_typePlan_0">
+                                prendre_du_poids
+                            </label>
+                        </div>
+                        <div>
+                            <label for="id_typePlan_1">
+                                <input type="radio" name="typePlan" value="1" required id="id_typePlan_1">
+                                perdre_du_poids
+                            </label>
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <label for="id_userMail">Usermail :</label>
+                    <input type="email" name="userMail" placeholder="Email" maxlength="100" required id="id_userMail">
+                </p>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <div class="footer">
+            <img src="{% static "images/footer_svg.svg" %}" />
+        </div>
+    </body>
+</html>
