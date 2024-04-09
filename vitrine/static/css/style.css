@@ -35,6 +35,20 @@ form .question {
     font-family: "Lato", sans-serif;
     font-size: large;
     text-align: center;
+    animation: fade-in 1.2s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.current-question {
+    display: block;
 }
 
 .sex {
@@ -84,7 +98,7 @@ form .question {
 .radio0 {
     display: flex;
     flex-direction: column-reverse;
-    margin: 0.5rem;
+    margin: 1rem;
     padding: 1rem;
     border: 1px solid #cccccc;
     border-radius: 10px;
@@ -92,6 +106,12 @@ form .question {
     font-family: "Lato", sans-serif;
     font-weight: 600;
     font-size: larger;
+    transition: transform .5s ease;
+}    
+
+
+.radio0:hover {
+    transform: scale(1.2);
 }
 
 #id_sex_0 {
@@ -112,7 +132,7 @@ form .question {
 .radio1 {
     display: flex;
     flex-direction: column-reverse;
-    margin: 0.5rem;
+    margin: 1rem;
     padding: 1rem;
     border: 1px solid #cccccc;
     border-radius: 10px;
@@ -120,6 +140,11 @@ form .question {
     font-family: "Lato", sans-serif;
     font-weight: 600;
     font-size: larger;
+    transition: transform .5s ease;
+}
+
+.radio1:hover {
+    transform: scale(1.2);
 }
 
 #id_sex_1 {
@@ -163,6 +188,25 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+.summary {
+    background-color: #2ecc71;
+    border-radius: 10px;
+    padding: 1.5rem;
+    font-family: "Lato", sans-serif;
+    color: white;
+    margin: 3rem;
+}
+
+.summary h2 {
+    margin-bottom: 1rem;
+    font-size: xx-large;
+}
+
+.summary p {
+    font-size: x-large;
+    margin: 1rem auto;
+}
+
 input[type=submit] {
     font-family: "Lato", sans-serif;
     font-size: x-large;
@@ -179,6 +223,8 @@ input[type=submit] {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 20rem;
     margin: 1rem;
 }
 

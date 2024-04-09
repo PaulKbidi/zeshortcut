@@ -58,7 +58,7 @@ form {
 
 .radio0 {
     display: flex;
-    margin: 0.5rem;
+    margin: 0 1.5rem;
     padding: 1rem;
     border: 1px solid #cccccc;
     border-radius: 10px;
@@ -67,6 +67,11 @@ form {
     font-weight: 600;
     font-size: larger;
     width: 15rem;
+    transition: transform .5s ease;
+}
+
+.radio0:hover {
+    transform: scale(1.2);
 }
 
 .radio0_0 {

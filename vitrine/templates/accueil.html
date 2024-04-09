@@ -64,6 +64,13 @@
                     </div>
                 </div>
                 <div class="question">
+                    <div class="summary">
+                        <h2>Résumé du formulaire :</h2>
+                        <p>Genre : <span id="summary-sex"></span></p>
+                        <p>Âge : <span id="summary-age"></span> ans</p>
+                        <p>Poids : <span id="summary-weight"></span> kg</p>
+                        <p>Taille : <span id="summary-size"></span> cm</p>
+                    </div>
                     <input type="submit" value="Envoyer">
                 </div>
             </form>
@@ -78,29 +85,57 @@
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 var questions = document.querySelectorAll('.question');
-                console.log(questions);
-            
+                var summarySex = document.getElementById('summary-sex');
+                var summaryAge = document.getElementById('summary-age');
+                var summaryWeight = document.getElementById('summary-weight');
+                var summarySize = document.getElementById('summary-size');
+
                 var currentQuestion = 0;
-            
+
                 var nextButton = document.querySelector('.next button');
-            
+
                 nextButton.addEventListener('click', function() {
+                    if (currentQuestion === 0) {
+                        var radioInputs = document.querySelectorAll('input[type="radio"][name="sex"]');
+                        var selectedValue = null;
+                        radioInputs.forEach(function(radioInput) {
+                            if (radioInput.checked) {
+                                selectedValue = radioInput.value;
+                            }
+                        });
+                        console.log(selectedValue);
+                        if (selectedValue == 0){
+                            summarySex.textContent = 'Homme';
+                        }
+                        else {
+                            summarySex.textContent = 'Femme';
+                        }
+                        console.log(summarySex.textContent);
+                    } else if (currentQuestion === 1) {
+                        summaryAge.textContent = document.getElementById('id_age').value;
+                        console.log(document.getElementById('id_age').value)
+                    } else if (currentQuestion === 2) {
+                        summaryWeight.textContent = document.getElementById('id_weight').value;
+                        console.log(document.getElementById('id_weight').value)
+                    } else if (currentQuestion === 3) {
+                        summarySize.textContent = document.getElementById('id_size').value;
+                        console.log(document.getElementById('id_size').value)
+                    }
+
                     questions[currentQuestion].style.display = 'none';
-            
+
                     currentQuestion++;
-                    console.log(currentQuestion);
-            
+
                     if (currentQuestion < questions.length) {
                         questions[currentQuestion].style.display = 'block';
                     } else {
                         nextButton.style.display = 'none';
                     }
-                    if(currentQuestion == questions.length - 1){
+                    if (currentQuestion === questions.length - 1) {
                         nextButton.style.display = 'none';
                     }
                 });
             });
-            
         </script>
     </body>
 </html>
