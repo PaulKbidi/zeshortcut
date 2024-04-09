@@ -7,7 +7,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <link rel="stylesheet" href="{% static "css/bmr.css" %}">
     </head>
     <body>
         <div class="body">
@@ -17,27 +17,28 @@
             <h1>Votre total calorique est de : {{api_bmr}}</h1>
             <form method="post">
                 {% csrf_token %}
-                <p>
-                    <label>Typeplan :</label>
-                    <div id="id_typePlan">
-                        <div>
-                            <label for="id_typePlan_0">
-                                <input type="radio" name="typePlan" value="0" required id="id_typePlan_0">
-                                prendre_du_poids
+                <div class="type_plan">
+                    <div id="id_typePlan" class="radio">
+                        <div class="radio0">
+                            <label for="id_typePlan_0" class="radio0_0">
+                                <input type="radio" name="typePlan" value="0" required id="id_typePlan_0" />
+                                prendre de la masse
+                                <img src="{% static "images/muscle.png" %}" />
                             </label>
                         </div>
-                        <div>
-                            <label for="id_typePlan_1">
-                                <input type="radio" name="typePlan" value="1" required id="id_typePlan_1">
-                                perdre_du_poids
+                        <div class="radio0">
+                            <label for="id_typePlan_1" class="radio0_0">
+                                <input type="radio" name="typePlan" value="1" required id="id_typePlan_1" />
+                                perdre du poids
+                                <img src="{% static "images/pomme.png" %}" />
                             </label>
                         </div>
                     </div>
-                </p>
-                <p>
-                    <label for="id_userMail">Usermail :</label>
+                </div>
+                <div class="mail">
+                    <label for="id_userMail">Mail :</label>
                     <input type="email" name="userMail" placeholder="Email" maxlength="100" required id="id_userMail">
-                </p>
+                </div>
                 <input type="submit" value="Submit" />
             </form>
         </div>
