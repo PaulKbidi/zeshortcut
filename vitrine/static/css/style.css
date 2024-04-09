@@ -109,7 +109,6 @@ form .question {
     transition: transform .5s ease;
 }    
 
-
 .radio0:hover {
     transform: scale(1.2);
 }
@@ -224,7 +223,7 @@ input[type=submit] {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 20rem;
+    bottom: 20%;
     margin: 1rem;
 }
 
