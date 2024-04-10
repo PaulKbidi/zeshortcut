@@ -58,7 +58,14 @@ form .question {
 }
 
 .div {
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div label {
+    margin-top: 4rem;
     font-family: "Lato", sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
@@ -68,20 +75,8 @@ form .question {
     border: 1px solid #cccccc;
     border-radius: 10px;
     box-shadow: 5px 5px 5px #cccccc;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-.weight {
-    font-family: "Lato", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-}
-
-.size {
-    font-family: "Lato", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
+    padding: 0.2rem 1rem;
+    margin-top: 5rem;
 }
 
 .radio {
@@ -110,7 +105,9 @@ form .question {
 }    
 
 .radio0:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
+    display: flex;
+    z-index: 10;
 }
 
 #id_sex_0 {
@@ -126,24 +123,6 @@ form .question {
 
 #id_sex_0:checked {
     border: 6px solid #f39c12;
-}
-
-.radio1 {
-    display: flex;
-    flex-direction: column-reverse;
-    margin: 1rem;
-    padding: 1rem;
-    border: 1px solid #cccccc;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-    font-family: "Lato", sans-serif;
-    font-weight: 600;
-    font-size: larger;
-    transition: transform .5s ease;
-}
-
-.radio1:hover {
-    transform: scale(1.2);
 }
 
 #id_sex_1 {
@@ -162,14 +141,14 @@ form .question {
 }
 
 input[type=number] {
-    width: auto;
-    font-size: xx-large;
+    width: 7rem;
+    font-size: large;
     font-weight: 600;
-    margin: 2rem;
-    padding: 2rem;
-    border-radius: 10px;
-    color: #f39c12;
-    box-shadow: inset 5px 5px 5px #cccccc;
+    border: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: inset 0px 5px 5px #cccccc;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
